@@ -3,13 +3,17 @@ SRCS = 	ft_printf.c \
 		ft_putnbr.c \
 		ft_putstr.c 
 
-# BONUS = 
+BONUS = ft_printf.c \
+		ft_putnbr.c \
+		ft_putstr.c \
+		ft_bonus.c \
+		ft_atoi.c
 
 GCC = gcc -Wall -Werror -Wextra
 
 OBJS = $(SRCS:.c=.o)
 
-# BNOBJ = $(BONUS:.c=.o)
+BNOBJ = $(BONUS:.c=.o)
 
 LIB = ar -crs
 
@@ -23,8 +27,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(LIB) $(NAME) $(OBJS)
 
-# bonus: $(OBJS) $(BNOBJ) 
-# 	$(LIB) $(NAME) $(OBJS) $(BNOBJ)
+bonus: $(OBJS) $(BNOBJ) 
+	$(LIB) $(NAME) $(OBJS) $(BNOBJ)
 
 clean:
 	$(DEL) $(OBJS) $(BNOBJ)
@@ -34,4 +38,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: bonus clean fclean all re
