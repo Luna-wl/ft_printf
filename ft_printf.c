@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:01:11 by wluedara          #+#    #+#             */
-/*   Updated: 2022/10/07 18:33:25 by wluedara         ###   ########.fr       */
+/*   Updated: 2022/10/08 14:49:29 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ int	ft_putchar(char c)
 int	check_flag_bonus(const char *fmt, va_list args)
 {
 	int len;
-	int	wide;
 
 	len = 0;
-	wide = 0;
 	if (*fmt == '#')
 	{
 		fmt++;
@@ -33,7 +31,6 @@ int	check_flag_bonus(const char *fmt, va_list args)
 	else if (*fmt == ' ')
 	{
 		fmt++;
-		// printf("fmt = %s\n", fmt);
 		len += check_bo(fmt, args);
 	}
 	else if (*fmt == '+')
@@ -99,7 +96,7 @@ int	ft_printf(const char *fmt, ...)
 	return (len);
 }
 
-int	main()
-{
-	printf("\n|%d|\n", ft_printf("% 1s", ""));
-}
+// int	main()
+// {
+// 	printf("\n|%d|\n", ft_printf("%+++i", 2147483647));
+// }

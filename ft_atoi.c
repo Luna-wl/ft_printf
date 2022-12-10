@@ -37,6 +37,5 @@ int	ft_atoi(const char *str)
 		num = (num * 10) + (*str - '0');
 		str++;
 	}
-	num *= minus;
-	return (num);
+	return (num * minus);
 }

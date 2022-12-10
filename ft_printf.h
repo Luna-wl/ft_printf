@@ -29,5 +29,6 @@ int		ft_putnbr_bo(int num, char flag);
 int		ft_atoi(const char *str);
 int		ft_putstr_bo(char *s, int wide);
 int		ft_putnbr2_bo(unsigned int num, char flag);
+int		check_bo2(const char *fmt, va_list args);
 
 #endif
