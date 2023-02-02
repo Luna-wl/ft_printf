@@ -24,11 +24,5 @@ int		ft_putnbr2(unsigned int num, unsigned int base, char flag);
 int		ft_puthex(size_t num);
 int		ft_putstr(char *s);
 int		check_flag(const char *fmt, va_list args);
-int		check_bo(const char *fmt, va_list args);
-int		ft_putnbr_bo(int num, char flag);
-int		ft_atoi(const char *str);
-int		ft_putstr_bo(char *s, int wide);
-int		ft_putnbr2_bo(unsigned int num, char flag);
-int		check_bo2(const char *fmt, va_list args);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 19:01:11 by wluedara          #+#    #+#             */
-/*   Updated: 2022/10/08 14:49:29 by wluedara         ###   ########.fr       */
+/*   Updated: 2022/10/05 00:52:17 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,6 @@ int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
-}
-
-int	check_flag_bonus(const char *fmt, va_list args)
-{
-	int len;
-
-	len = 0;
-	if (*fmt == '#')
-	{
-		fmt++;
-		len += check_bo(fmt, args);
-	}
-	else if (*fmt == ' ')
-	{
-		fmt++;
-		len += check_bo(fmt, args);
-	}
-	else if (*fmt == '+')
-	{
-		fmt++;
-		len += ft_putnbr_bo(va_arg(args, int), '+');
-	}
-	return (len);
 }
 
 int	check_flag(const char *fmt, va_list args)
@@ -80,13 +57,7 @@ int	ft_printf(const char *fmt, ...)
 		if (*fmt == '%')
 		{
 			fmt++;
-			if (*fmt == '#' || *fmt == ' ' || *fmt == '+')
-			{
-				len += check_flag_bonus(fmt, args);
-				fmt++;
-			}
-			else
-				len += check_flag(fmt, args);
+			len += check_flag(fmt, args);
 		}
 		else
 			len += ft_putchar(*fmt);
@@ -95,8 +66,3 @@ int	ft_printf(const char *fmt, ...)
 	va_end(args);
 	return (len);
 }
-
-// int	main()
-// {
-// 	printf("\n|%d|\n", ft_printf("%+++i", 2147483647));
-// }
